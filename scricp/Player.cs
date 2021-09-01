@@ -46,6 +46,7 @@ public class Player : MonoBehaviour,ObjInterface
     public bool doubleJ = false;
 
     public bool jumping=false;
+    public int jumpState = 0;
 
 
 
@@ -265,14 +266,12 @@ public class Player : MonoBehaviour,ObjInterface
         if (fos.Count > 0)
         {
             Vector3 pos = mOb.getPos();
-            Debug.Log("최대: " + (fos[0].getPos().x +fos[0].getTest().x));
-            Debug.Log("최소: " + (fos[0].getPos().x - fos[0].getTest().x));
+          
             //mFloor = fos[0];
             FloorChange(fos[0]);
-            Debug.Log("fos: " + fos[0].getPos().x + fos[0].getTest().x);
-            Debug.Log("pos: "+pos.x);
+            
             transform.position = new Vector3(pos.x, fos[0].getPos().y + fos[0].getTest().y , pos.z);
-            Debug.Log("T: " + (fos[0].getPos().x + fos[0].getTest().x > pos.x));
+           
             
        }
         
